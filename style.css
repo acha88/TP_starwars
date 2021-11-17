@@ -1,0 +1,28 @@
+* {
+    background-color: #292727;
+    color: #fff;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+#banniere {
+    background-color: black;
+    padding: 0 43.6%;
+    margin: 0;
+    height: 150px;
+    margin-bottom: 0.5%;
+}
+
+nav {
+    margin: 0 70%;
+    margin-right: 10%;
+}
+a {
+    margin-right: 2%;
+    padding: 2%;
+    font-size: 18px;
+}
+a:hover {
+    background-color: #ece5a3;
+    color: #000;
+}
