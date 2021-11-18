@@ -2,9 +2,9 @@ let characterList = new Array();
 let RecordsList=new Array();
 var starWarsList= document.querySelector('ul');
 
-function AjouteDivMovie(movie){
+function AjouteDivPlanet(planets){
     let listItem = document.createElement('li'); 
-    listItem.innerHTML = '<button id="movieSelect" onload="choixMovie">' + movie.title + '</button>'; 
+    listItem.innerHTML = '<button id="movieSelect" onload="choixMovie">' + planets.name + '</button>'; 
     starWarsList.appendChild(listItem);  
 
 }
@@ -23,38 +23,35 @@ function fetchAPI (url,type){
             
             switch(type){
                 case "films":
+                    console.log("Pas bouger !")
+                    break;
+                case "planets":
                     for (r of result) {
                         console.log(r.title);
                         console.log(r);
-                        AjouteDivMovie(r);
+                        AjouteDivPlanet(r);
                         RecordsList.push(r);
                     }
                     console.log(characterList);
                     affiche(RecordsList);
-
-            
                     break;
                 case "people":
                     //Chaque résultat est concaténé pour apparaître dans un tableau
                     
                     console.log("Pas bouger !")
-                    // CreateList(json);
-                 
-                   
-                        //.........
                     break;
-                //...................
+                
                 default:
                     break;    
             }
-      });
-      return(characterList);
+        });
+    return(characterList);
 }
 
 function affiche(Records)
 {
     for (r of Records){
-        console.log(r.title);
+        console.log(r.name);
     }
 }
 
@@ -62,4 +59,4 @@ function choixPeople(people) {
      
 }
 
-fetchAPI('https://swapi.dev/api/', "films");
+fetchAPI('https://swapi.dev/api/', "planets");
