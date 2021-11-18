@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star wars</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="">
     <header>
         <img id="banniere" src="img/star-wars.png" alt="banniere">
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="movie.html">Films</a>
-            <a href="people.html">Personnages</a>
-            <a href="planet.html">Planètes</a>
+            <button><a href="index.html">Accueil</a></button>
+            <button id="film"><a href="movie.html">Films</a></button>
+            <button id="personnage"><a href="people.html">Personnages</a></button>
+            <button id="planete"><a href="planet.html">Planètes</a></button>
         </nav>
     </header>
     <main>
-        <h1>Star-wars :<Recherche class="search" placeholder="Saisi ta recherche">🔎 Recherche ...</Recherche></h1>
+        <h1>Star-wars :</h1>
+        <Recherche class="search">Recherche ...</Recherche>
         <article class="article">
             <section>
                 <div class="card one">
-                    <img src="img/images.png" alt="">
+                    <img src="img/jessuie.png" alt="">
                 </div>
                 <div>
                     <h3>if (dans la recherche tu seras) {</h3>
@@ -35,7 +40,7 @@
             </section>
             <section>
                 <div class="card two">
-                    <img src="img/images (5).jpg" alt="">
+                    <img src="img/jetdail.jpg" alt="">
                 </div>
                 <div>
                     <h3>La faim justifie les moyens</h3>
@@ -48,7 +53,7 @@
         </article>
         <aside class="card tree">
             <div class="cardBody">
-                <img src="img/images (6).jpg" alt="">
+                <img src="img/paintartetatin.jpg" alt="">
             </div>
             <div>
                 <h3>Aller on s'ambiance !</h3>
@@ -64,9 +69,8 @@
         </aside>
     </main>
     <footer>
-        <img src="img/images (4).jpg" alt="">
+        <img src="img/yodafooter.jpg" alt="">
         <h3>Ensemble !</h3>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>

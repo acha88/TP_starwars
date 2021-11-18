@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star wars</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body onload="">
     <header>
         <img id="banniere" src="img/star-wars.png" alt="banniere">
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="movie.html">Films</a>
-            <a href="people.html">Personnages</a>
-            <a href="planet.html">Planètes</a>
+            <button><a href="index.html">Accueil</a></button>
+            <button id="film"><a href="movie.html">Films</a></button>
+            <button id="personnage"><a href="people.html">Personnages</a></button>
+            <button id="planete"><a href="planet.html">Planètes</a></button>
         </nav>
     </header>
     <h1>Star wars : Recherche...</h1>
-    
-
+    <ul></ul>
+    <div id="afficher"></div>
+    <script src="people.js"></script>
 </body>
 </html>

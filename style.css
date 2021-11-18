@@ -3,6 +3,7 @@
     color: #fff;
     font-family: 'Roboto';
     text-decoration: none;
+    cursor: url("img/Sw8.gif"), auto;
 }
 main {
     width: 100%;
@@ -17,45 +18,62 @@ main {
 }
 
 nav {
-    margin: 0 70%;
+    margin: 0 60%;
     margin-right: 10%;
 }
+button,
 a {
     margin-right: 2%;
     padding: 2%;
     font-size: 18px;
 }
-a:hover {
-    background-color: #ece5a3;
+button:hover {
+    background-color: #eeecd793;
     color: #000;
+    border-radius: 10%;
 }
 h1 {
-    display: flex;
-    flex-direction: column;
+    margin: 2%;
     width: 100%;
+}
+.search {
+    padding: 1.5%;
+    width: 80%;
+    height: 2%;
+    background-color: #413e3e;
+    text-align: center;
+    border-radius: 40%;
+}
+.search:hover {
+    background-color: #535050;
+    transition: 0.6s;
 }
 article {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-around;
     width: 30%;
-    margin: 5% 10%;
+    margin: 15% 1%;
 }
 
 section {
-    padding: 5%;
-    margin: 0 15%;
-    border: #ee0b0b 1px solid;
+    padding: 2%;
+    margin: 0 10%;
+    border: #000 1px solid;
 }
 
 aside {
     padding: 2%;
-    border: #ee0b0b 1px solid;
+    border: #000 1px solid;
     width: 100%;
-    margin: 5% 10%;
+    margin: 10% 10%;
+    justify-content: center;
 }
 
 footer {
     margin: 0 45%;
+}
+h3 {
+    text-align: center;
 }
