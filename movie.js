@@ -2,11 +2,10 @@ let characterList = new Array();
 let RecordsList=new Array();
 var starWarsList= document.querySelector('ul');
 
-function AjouteDivMovie(movie){
+function AddDivMovie(movie){
     let listItem = document.createElement('li'); 
-    listItem.innerHTML = '<button id="movieSelect" onload="choixMovie">' + movie.title + '</button>'; 
-    starWarsList.appendChild(listItem);  
-
+    listItem.innerHTML = '<button class="btnInfo" onclick="choiceMovie()">' + movie.title + '</button>'; 
+    starWarsList.appendChild(listItem);
 }
 
 function fetchAPI (url,type){
@@ -15,7 +14,6 @@ function fetchAPI (url,type){
     }
     fetch(url) 
         .then(function(response) {   
-        
             return response.json(); 
         })
         .then(function(json) {
@@ -23,27 +21,16 @@ function fetchAPI (url,type){
             
             switch(type){
                 case "films":
+                    characterList = characterList.concat(result);
                     for (r of result) {
-                        console.log(r.title);
-                        console.log(r);
-                        AjouteDivMovie(r);
+                        AddDivMovie(r);
                         RecordsList.push(r);
                     }
-                    console.log(characterList);
                     affiche(RecordsList);
-
-            
                     break;
                 case "people":
-                    //Chaque résultat est concaténé pour apparaître dans un tableau
-                    
                     console.log("Pas bouger !")
-                    // CreateList(json);
-                 
-                   
-                        //.........
                     break;
-                //...................
                 default:
                     break;    
             }
@@ -51,15 +38,13 @@ function fetchAPI (url,type){
       return(characterList);
 }
 
-function affiche(Records)
-{
-    for (r of Records){
-        console.log(r.title);
+function choiceMovie() {
+    for (let i=0; i < characterList.length; i++) {
+        let listMovie = characterList[i];
+        document.getElementById("afficher").innerHTML += '<div class="cardInfo">' + 'Titre : ' + listMovie.title + '<br>' + 'Producteur :' + listMovie.producer + '<br>' + 'Date :' + listMovie.release_date + 'Numéro de l\'épisode :' + listMovie.episode_id + '<br></div><br>';
+        console.log(listMovie);
     }
 }
 
-function choixPeople(people) {
-     
-}
 
 fetchAPI('https://swapi.dev/api/', "films");

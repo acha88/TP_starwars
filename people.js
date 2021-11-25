@@ -1,49 +1,45 @@
 let characterList = new Array();
-let RecordsList=new Array();
+let RecordsList = new Array();
+let personnageList = new Array();
 var starWarsList= document.querySelector('ul');
 
-function AjouteDivPeople(people){
-    let listItem = document.createElement('li'); 
-    listItem.innerHTML = '<button id="nameSelect" onload="choixPeople">' + people.name + '</button>'; 
-    starWarsList.appendChild(listItem);  
-
+function AddDivPeople(people){  
+    let listItem = document.createElement('li');
+    listItem.innerHTML = '<button class="btnInfo" onclick="choicePeople('+people+')" >' + people.name + '</button>'; 
+    starWarsList.appendChild(listItem);
 }
 
-function fetchAPI (url,type){
-    if (type!=""){
+function fetchAPI (url,type, urldonne){
+    if (type!="" && urldonne == false){
         url+=type;
     }
     fetch(url) 
         .then(function(response) {   
-        
             return response.json(); 
         })
         .then(function(json) {
-            let result = json.results; 
-            
+            let result;
+            if (urldonne == false) {
+                result = json.results; 
+            } else {
+                result = json;
+            }
             switch(type){
                 case "films":
-                console.log("Je ne fais rien"); //à modifier c'est pour l'exemple
-        /* Appelons notre fonction */
+                console.log("Je ne fais rien");
                     break;
                 case "people":
-                    //Chaque résultat est concaténé pour apparaître dans un tableau
                     characterList = characterList.concat(result);
-
                     for(r of result) {
-                        console.log(r.name);
-                        console.log(r);
-                        AjouteDivPeople(r);
+                        personnageList.push(r)
+                        console.log(r);}
+                        
+                        for (i=0; i < personnageList.length; i++){
+                            AddDivPeople(personnageList[i]);
+                        }
                         RecordsList.push(r);
-                    }
-                    console.log(characterList);
-                    affiche(RecordsList);
-                    // CreateList(json);
-                 
-                   
-                        //.........
+                    
                     break;
-                //...................
                 default:
                     break;    
             }
@@ -51,15 +47,10 @@ function fetchAPI (url,type){
       return(characterList);
 }
 
-function affiche(Records)
-{
-    for (r of Records){
-        console.log(r.name);
-    }
+
+function choicePeople(url) {
+        fetchAPI(url, "people")
+        document.getElementById("afficher").innerHTML += '<div class="cardInfo">' + 'Nom : ' + people.name + '<br>' + 'Genre : ' + people.gender + '<br>' + 'Age galactique : ' + people.birth_year + '<br>' + 'Taille : ' + people.height + 'cm' + '<br>' + 'Poid :' + people.mass + 'kg' +'<br>' + 'Films : <button>'+ people.films +'</button>' + 'Habitat : <button>' + people.homeworld +'</button>' +'</div><br>';
 }
 
-function choixPeople(people) {
-     
-}
-
-fetchAPI('https://swapi.dev/api/',"people");
+fetchAPI('https://swapi.dev/api/',"people", false);

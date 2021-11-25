@@ -11,66 +11,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="">
+<body>
     <header>
         <img id="banniere" src="img/star-wars.png" alt="banniere">
         <nav>
             <button><a href="index.html">Accueil</a></button>
-            <button id="film"><a href="movie.html">Films</a></button>
             <button id="personnage"><a href="people.html">Personnages</a></button>
             <button id="planete"><a href="planet.html">Planètes</a></button>
+            <button id="film"><a href="movie.html">Films</a></button>
         </nav>
     </header>
     <main>
-        <h1>Star-wars :</h1>
-        <Recherche class="search">Recherche ...</Recherche>
-        <article class="article">
-            <section>
-                <div class="card one">
-                    <img src="img/jessuie.png" alt="">
-                </div>
-                <div>
-                    <h3>if (dans la recherche tu seras) {</h3>
-                    <p>Ce site t'aideras !</p>
-                    <p>}</p>
-                </div>
-                <div class="cardFooter">
-                    <p></p>
-                </div>
-            </section>
-            <section>
-                <div class="card two">
-                    <img src="img/jetdail.jpg" alt="">
-                </div>
-                <div>
-                    <h3>La faim justifie les moyens</h3>
-                    <p>Et pour ça, il faut se cultiver !</p>
-                </div>
-                <div class="cardFooter">
-                    <p></p>
-                </div>
-            </section>
+        <div class="introduce">
+            <h1>Bienvenue dans le monde de Star-wars !</h1>
+            <h4>Taper votre recherche parmi les tags suivants :</h4>
+        </div>
+        <div class="recherche">
+            <input type="text" id="search" placeholder="Saisissez le tag de votre recherche">
+            <button type="button" onclick="chargeTag()">Rechercher</button>
+        </div>
+        <article>
+            <div class="card one">
+                <img src="img/people.jpg" alt="" width="450px">
+                <h3>#people</h3>
+                <p>Ce tag vous donnera la liste des personnages.</p>
+                <p>Chaque personnage, vous donnera des informations complémentaires... Je vous laisse les découvrir !</p>
+            </div>
         </article>
-        <aside class="card tree">
-            <div class="cardBody">
-                <img src="img/paintartetatin.jpg" alt="">
+        <article>
+            <div class="card two">
+                <img src="img/planet.jpg" alt="" width="450px">
+                <h3>#planets</h3>
+                <p>Ce tag vous donnera la liste des planètes.</p>
+                <p>Chaque planète, vous donnera toutes les informations la concernant !</p>
             </div>
-            <div>
-                <h3>Aller on s'ambiance !</h3>
-                <!--mettre l'api spotify-->
-                <audio
-                controls 
-                src="">
-                </audio>
-            </div>
-            <div class="cardFooter">
-                <p></p>
+        </article>
+        <aside>
+            <div class="card tree">
+                <img src="img/movie.jpg" alt="" width="450px">
+                <h3>#films</h3>
+                <p>Ce tag vous donnera la liste des films de la saga.</p>
+                <p>Vous avez loupé un film ? Vous souhaitez savoir tous les titres ? Toutes les informations se trouveront ici !</p>
             </div>
         </aside>
     </main>
-    <footer>
-        <img src="img/yodafooter.jpg" alt="">
-        <h3>Ensemble !</h3>
-    </footer>
+
 </body>
 </html>
